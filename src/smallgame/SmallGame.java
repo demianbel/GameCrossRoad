@@ -165,38 +165,6 @@ public class SmallGame  {
         }
 
     }
-    static class EnterKeyListener implements KeyListener{
-
-        @Override
-        public void keyTyped(KeyEvent e) {
-            //To change body of generated methods, choose Tools | Templates.
-        }
-
-        @Override
-        public void keyPressed(KeyEvent e) {
-            int key = e.getKeyCode();
-            if(key==KeyEvent.VK_ENTER){
-             //field = new int[20][20];
-             pl = new Player(field);
-             autoArray = new ArrayList();
-             fillAuto();
-             thr = new Thread(new MyThread());
-             thr.start();
-             //res.setVisible(false);
-             //System.out.println(pl.getX() + " " +pl.getY());
-             //gui.setVisible(true);
-             //gui.update(g);
-             repaintField();
-            }
-            
-//To change body of generated methods, choose Tools | Templates.
-        }
-
-        @Override
-        public void keyReleased(KeyEvent e) {
-            //To change body of generated methods, choose Tools | Templates.
-        }
-        
-    }
+    
 
 }
