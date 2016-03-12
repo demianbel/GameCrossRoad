@@ -1,8 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+This is the game. You are the green Rectangle, the red rectangles are machines. 
+You have to cross the road and win the game.
  */
+/**@author Демьян Бельский*/
 package smallgame;
 
 import java.awt.event.KeyEvent;
@@ -12,16 +12,13 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFrame;
 
-/**
- *
- * @author Демьян
- */
 public class SmallGame  {
     static GameFrame gui;
     static Result res;
     static long speed =100;
     static Thread thr = new Thread(new MyThread());
     static int[][] field = new int[20][20];
+    /**@param winField array with words "You win"*/
     private static final int[][] winField ={
       {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 {0,2,0,0,0,2,0,0,2,0,0,2,0,2,0,0,0,0,0,0},
@@ -44,6 +41,7 @@ public class SmallGame  {
 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},  
     };
+    /**@param looseField array with words "You loose"*/
     private static final int[][] looseField = {
         {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
             {0,1,0,0,0,1,0,0,1,0,0,1,0,1,0,0,0,0,0,0},
@@ -71,9 +69,7 @@ public class SmallGame  {
     static RandomAutomobileFactory raf = new RandomAutomobileFactory(field);
     static List<Automobile> autoArray = new ArrayList();
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void resetField() {
         field = new int[20][20];
     }
@@ -93,6 +89,7 @@ public class SmallGame  {
             ++count;
         }
     }
+    
     public static void repaintField(){
         //edit array field[][] and repaint gui
         while (!pl.loose && !pl.win) {
@@ -124,7 +121,9 @@ public class SmallGame  {
             gui.setField(winField);
         }
     }
-
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
         // TODO code application logic here
 
