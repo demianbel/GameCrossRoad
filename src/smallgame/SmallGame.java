@@ -14,7 +14,6 @@ import javax.swing.JFrame;
 
 public class SmallGame  {
     static GameFrame gui;
-    static Result res;
     static long speed =100;
     static Thread thr = new Thread(new MyThread());
     static int[][] field = new int[20][20];
